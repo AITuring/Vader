@@ -36,7 +36,8 @@
   合并单元格
 - form[target,method,enctype]
   
-  target表单提交到哪里，method是提交的方式（get或者post），enctype是用那种编码（针对post），有urlencode和formdata（可以上传文件）
+  target表单提交到哪里，method是提交的方式（get或者post），enctype是用那种编码（针对post），有urlencode和formdata（可以上传文件 
+  ）
 - input[type,value]
 - button[type]
 - select>option[value]
