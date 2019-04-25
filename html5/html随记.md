@@ -80,3 +80,93 @@ ul的type类型：
 - 常见块级元素： `<h1>`,`<p>`, `<ul>`, `<table>`。
 
 ### 内联元素
+- 内联元素在显示时通常不会以新行开始。宽度(width)、高度(height)、内边距的 top/bottom(padding-top/padding-bottom)和外边距的 top/bottom(margin-top/margin-bottom)都不可改变。
+
+- 常见内联元素：`<b>`, `<td>`, `<a>`, `<img>`。
+
+### html的表格
+表格在网页中主要有两种用途：存放数据和组织网页内容。
+#### 表格的基础知识
+`<table>...</table>`用于创建表格。
+`<tr>`用于定义每一行。
+`<td>`用于定义每一列。
+
+例如：
+```html
+<table>
+    <tr>
+        <td>(1,1)</td>
+        <td>(1,2)</td>
+    </tr>
+    <tr>
+        <td>(2,1)</td>
+        <td>(2,2)</td>
+    </tr>
+</table>
+
+```
+显示效果为：
+```
+(1,1)	(1,2)
+(2,1)	(2,2)
+```
+可以给表格添加边框：
+```html
+<table border="1"></table>
+```
+如下：
+
+![](sheet.png)
+
+**注**：border="1"指表格边框厚度为1px，默认值为0.
+
+表格的其他常用属性如下，使用方法与border一样：
+
+属性名 | 含义 | 常用属性值
+---- | --- | --- |
+cellspacing | 设置单元格之间的距离 | 单位为px，默认为2px
+cellpadding | 设置文字与单元格之间距离 | 默认1px
+width | 设置表格宽度 | 单位为px
+height | 设置表格高度 | 单位为px
+bgcolor | 设置背景颜色 | red，green
+#### 使用`<th></th>`添加表头
+表头一般位于表格的第一行或第一列，其文本加粗居中显示，就类似于课程表上的第一行日期的显示，而表头的设置也很简单，只需要用`<th></th>`代替`<td></td>`即可。
+#### 按行/列合并单元格
+可以用`colspan`(合并行)和`rowspan`(合并列)合并单元格
+
+例如：
+```html
+<table border="1" width="300px" height="150px">
+    <tr>
+        <th></th>
+        <th>周一</th>
+        <th>周二</th>    
+        <th>周三</th>
+        <th>周四</th>    
+        <th>周五</th>
+    </tr>
+    <tr>
+        <th rowspan="2">上午</th>
+        <td>语文</td>
+        <td>数学</td>    
+        <td>语文</td>
+        <td>数学</td>    
+        <td>体育</td>    
+    </tr>
+    <tr>
+        <!--<th></th>-->
+        <td>语文</td>
+        <td>数学</td>    
+        <td>语文</td>
+        <td>数学</td>    
+        <td>体育</td>    
+    </tr>
+</table>
+```
+效果如下：
+
+![](sheet1.png)
+
+#### 表格的其他功能
+- 表格标题
+紧随table标签之后，创建caption标签。这就是表格的标题。通常这个标题会被居中于表格之上。
