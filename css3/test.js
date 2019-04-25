@@ -44,12 +44,41 @@
 
 
 //OOP
-var ming={
-    name:'ming',
-    birth:1999,
-    school:'Nankai',
-    height:175,
-    weight:166,
-    score:null
-};
+// var ming={
+//     name:'ming',
+//     birth:1999,
+//     school:'Nankai',
+//     height:175,
+//     weight:166,
+//     score:null,
+//     'middle-school':'erzhong'
+// };
+// console.log(ming.name,ming.birth,ming['middle-school'])
 
+//loop
+// var x=0;
+// var i;
+// for (i=1;i<10000;i++){
+//     x=x+i;
+// }
+// console.log(x)
+//
+// var ming={
+//     name:'jack',
+//     age:20,
+//     city:'Tianjing'
+// };
+//
+// for(var key in ming){
+//     console.log(key);
+// }
+//
+// var s=['A','B','C']
+// for (var i in s){
+//     console.log(i)
+//     console.log(s[i])
+// }
+
+//Map
+// var m=new Map();
+// m.set('a',1);```````````````````````````````````````````````````````````````````````````````````````````````
