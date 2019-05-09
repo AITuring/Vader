@@ -170,3 +170,45 @@ bgcolor | 设置背景颜色 | red，green
 #### 表格的其他功能
 - 表格标题
 紧随table标签之后，创建caption标签。这就是表格的标题。通常这个标题会被居中于表格之上。
+例如：
+```html
+<table border="1" width="300px" height="150px">
+    <caption>课程表</caption>
+    <tr>
+        <th></th>
+        <th>周一</th>
+        <th>周二</th>    
+        <th>周三</th>
+        <th>周四</th>    
+        <th>周五</th>
+    </tr>
+    <tr>
+        <th rowspan="2">上午</th>
+        <td>语文</td>
+        <td>数学</td>    
+        <td>语文</td>
+        <td>数学</td>    
+        <td>体育</td>    
+    </tr>
+    <tr>
+        <!--<th></th>-->
+        <td>语文</td>
+        <td>数学</td>    
+        <td>语文</td>
+        <td>数学</td>    
+        <td>体育</td>    
+    </tr>
+</table>
+```
+浏览器中显示的效果为：
+![](sheet3.png)
+- table元素布局
+现在很多布局都是使用div+css形式。table布局中：
+
+1.`<thead></thead>`：用于定义表格的头部，一般包含网页的logo和导航等头部信息,位于`<table></table>`之中。
+
+2.`<tfoot></tfoot>`：用于定义表格的页脚，一般包含网页底部的企业信息，地址联系方式等，位于`<table></table>`标记之中，`<thead></thead>`标记之后。
+
+3.`<tbody></tbody>`：用于定义表格的主体，一般包含网页中除头部和底部之外的其他内容，位于`<table></table>`标记之中，`<tfoot></tfoot>`标记之后。
+
+下面是一个表格的例子：
