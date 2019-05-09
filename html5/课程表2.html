@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 1.先确定表格的大小，背景色等属性 
+        2.先画图，根据图片将表格按行分解，从每一行开始写
+        3.第一行，就一列，是星期，作为表头(其实每一行中的某个元素都能用表头标签，结果就是字体加粗了)
+        4.上午两行，将第一列的两行合并，加宽
+        5.中午行宽为7，和整个行宽一致
+        -->
+    <table width="300" height="200" bgcolor="green"  align="center" >
+    <caption>课程表</caption>
+    <!-- 第一行，课程表的星期 -->
+        <tr bgcolor="white">
+            <!-- 前两个表格没有用，就合并了 -->
+            <th width="80" colspan="2"></th>
+            <th>星期一</th>
+            <th>星期二</th>
+            <th>星期三</th>
+            <th>星期四</th>
+            <th>星期五</th>
+        </tr>
+        <!-- 上午那一列 -->
+        <tr bgcolor="white">
+            <!-- 第一二列合并 -->
+            <td rowspan="2" width="50">上午</td>
+            <td width="30">1</td>
+            <td>语文</td>
+            <td>数学</td>
+            <td>外语</td>
+            <td>音乐</td>
+            <td>体育</td>
+        </tr>
+        <tr bgcolor="white">
+            <!-- <td></td> -->
+            <td>2</td>
+            <td>数学</td>
+            <td>数学</td>
+            <td>物理</td>
+            <td>化学</td>
+            <td>生物</td>
+        </tr>
+        <!-- 中午休息那一行 -->
+        <tr bgcolor="white" align="center">
+            <td colspan="7" height="50">午休时间12点到2点</td>
+            
+           
+        </tr>
+        <tr bgcolor="white">
+            <td rowspan="2" height="50">下午</td>
+            <td>1</td>
+            <td>体育</td>
+            <td>语文</td>
+            <td>历史</td>
+            <td>政治</td>
+            <td>化学</td>
+        </tr>
+        <tr bgcolor="white">
+            <!-- <td></td> -->
+            <td>2</td>
+            <td>音乐</td>
+            <td>语文</td>
+            <td>数学</td>
+            <td>美术</td>
+            <td>语文</td>
+        </tr>
+    </table>
+</body>
+</html>
