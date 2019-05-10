@@ -288,3 +288,115 @@ bgcolor | 设置背景颜色 | red，green
 </body>
 </html>
 ```
+### html多媒体
+#### html图片
+图片的标签`<img src="url" alt=""/>`
+
+有的时候需要让图片根据父元素自适应变化大小，使得网页更加美观。这时候需要将width设置为100%，就能使得图片随着窗口宽度改变而自适应变化大小。
+#### html video
+`<video src=" "</vedio>`
+video有以下属性：
+- autoplay：如果出现该属性，视频在就绪后马上播放
+- controls：如果出现，向用户展示控件，比如播放按钮
+- height：设置视频播放器的高度
+- weight：设置视频播放器的宽度
+- loop：如果出现，循环播放视频
+- preload：如果出现，视频在页面加载的时候就进行加载，如果已经有了autoplay，就不用管这个属性了
+- src：要播放的url
+
+#### html音频
+`<audio controls><source src="" type="audio/mp3"></audio>`
+
+#### iframe
+iframe元素会创建包含另外一个文档的内联框架，用于嵌入其他网页
+
+语法格式如下：
+`<iframe src="" width=" " height=" " frameborder="1/0 name="" scrolling="yes/no/auto"></iframe>`
+
+常用属性如下：
+![](wm.png)
+
+### html表单
+表单负责数据的采集，一般情况下，表单由三部分构成：
+- 表单标签：包含了处理表单数据所用程序的url以及数据提交到服务器的方法
+- 表单域：包含了文本框，密码框，隐藏域，多行文本框，复选框，单选框等
+- 表单按钮：包含提交按钮，复位按钮和一般按钮。
+
+表单的语法结构为：
+`<from name="" method="get/post" action="url" ></from>`
+
+#### action
+其中，action是用来指定表单处理程序的位置。action定义了发送数据要去的地址，其值必须是一个有效的url，可以是相对url也可以是绝对url，**如果没有提供此属性或者action="#"，数据将被发送到包含表单页面的url**
+
+#### method
+##### get
+method属性中，使用get方法后，浏览器会将数据直接附在表单的action url之后，两者之间通过？进行间隔。例如：
+```html
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>form</title>
+    </head>
+    <body>
+        <form action="https://www.shiyanlou.com/" method="GET">
+        <div>
+            <label for="say">What do you want to say?</label>
+            <input name="say" id="say" value="hello">
+        </div>
+
+        <div>
+            <label for="to">Where do you want to go?</label>
+            <input name="to" id="to" value="China">
+        </div>
+
+        <div>
+            <button>发送数据</button>
+        </div>
+        </form>
+    </body>
+</html>
+
+```
+
+可以看到，但点击数据提交按钮时，浏览器就会发生跳转，浏览器地址栏的值会变成：
+https://www.shiyanlou.com/?say=hello&to=China
+
+可以更确切地说，数据被附加到url作为一系列的名称/值对。在url结束之后，包括了一个？，后面是值对，每一个都由一个&符号分隔开。
+##### post
+使用 post 方法。首先，浏览器将与 action 属性中指定的表单处理服务器建立联系，一旦建立连接之后，浏览器就会按分段传输的方法将数据发送给服务器。在服务器端，一旦 post 样式的应用程序开始执行时，就应该从一个标志位置读取参数，而一旦读到参数，在应用程序能够使用这些表单值以前，必须对这些参数进行解码。用户特定的服务器会明确指定应用程序应该如何接受这些参数。
+#### 表单验证
+##### required属性
+输入值不能为空，空了就提示错误。例如：
+```html
+<form >
+            <label for="place">Where you want to go?</label>
+            <input id="place" name="
+            place" required>
+            <button>Submit</button>
+        </form>
+```
+如果输入为空：
+![](form.png)
+##### 强制条目长度
+所有的文本框(`<input>`或者`<textarea>`)可以强制使用`minlength`和`maxlength`属性，如果值大于`maxlength`或小于`minlength`就是无效的。
+#####表单标题
+`<fieldset>`元素组合表单中的相关数据，`<legend>`元素为`<fileset>`元素定义标题。例如：
+```html
+<form>
+            <fieldset>
+                <legend>这是一个表单</legend>
+                name:<br>
+                <input type="text" name="yourname">
+                <br>
+                age:<br>
+                <input type="text" name="yourage">
+            </fieldset>
+        </form>
+
+```
+显示效果为：
+
+![](form2.png)
+##### label元素
+label为 input 元素定义标注（标记）,当用户选择该标签时，浏览器就会自动将焦点转到和标签相关的表单控件上。`<label> `标签的 for 属性应当与相关元素的 id 属性相同，使得`<label>` 标签与 `<input>` 正确相关联。
