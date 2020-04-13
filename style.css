@@ -1,0 +1,35 @@
+/* 样式重置 */
+.{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:Helvetica,"PingFang SC","Microsoft Yahei",sans-serif;
+}
+
+img{
+    width: 100%;
+}
+
+/* 设置主要色调和次要色调 */
+:root{
+    --primary-color:#ff434f;
+    --secondary-color:#e3e3e3;
+    --text-color-lightest:#e7e9ec;
+    --text-color-darker:#2e2e2e;
+    --text-color-dark:#494949;
+    --text-color-gray:#8b8b8b;
+    --text-color-dark-gray:#727272;
+    --text-color-light-gray:#c6c6c6;
+    --backdrop-color:rgba(42,42,42,0.69)
+}
+
+/* 头部导航 */
+header{
+    width:100vm;
+    height: 80px;
+    /* 栅格布局 */
+    display:grid;
+    padding:0 40px;
+
+    gr
+}

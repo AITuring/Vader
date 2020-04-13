@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/5.12.1/css/all.css">
+    <title>峰华科技</title>
+</head>
+<body>
+    <header>
+        <div class="logo">优达科技</div>
+
+        <nav>
+            <a href="#">首页</a>
+            <a href="#">关于我们</a>
+            <a href="#">成功案例</a>
+            <a href="#">服务流程</a>
+            <a href="#">团队介绍</a>
+            <a href="#">公司动态</a>
+            <i class="fas fa-search"></i>
+
+        </nav>
+        <!-- 折叠导航按钮，屏幕缩小时使用 -->
+        <div class="burger">
+            <div class="burger-line1"></div>
+            <div class="burger-line2"></div>
+            <div class="burger-line3"></div>
+        </div>
+    </header>
+    <!-- 定义轮播图 -->
+    <div class="glide">
+        <!-- 轮播图轨迹 -->
+        <div class="glide__track" data-glide-el="track">
+            <div class="glide__slides">
+                <!-- 第一个轮播图 -->
+                <div class="glide__slide">
+                    <!-- 标题 -->
+                    <div class="slide-caption">
+                        <h1>用创新点缀人生，让科技融入理想。</h1>
+                        <h3>科技创新大平台，智慧生活新引擎。依靠科技进步推进经济跨越式发展。用创新点缀人生，让科技融入理想。</h3>
+                        <button class="explore-btn">探索更多</button>
+                        <div class="backdrop"></div>
+                        <!-- 轮播图片 -->
+                        <img src="images/people-in-couch-1024248.jpg" alt=""/>
+                    </div>
+                </div>
+                <!-- 第二个轮播图 -->
+                <div class="glide__slide">
+                    <!-- 标题 -->
+                    <div class="slide-caption">
+                        <h1>科技改变世界</h1>
+                        <h3>立足科技发展，着力自主创新。加速科技进步，为全市经济社会发展提供有力支撑。凝聚科技创新，成就创新梦想。</h3>
+                        <button class="explore-btn">探索更多</button>
+                        <div class="backdrop"></div>
+                        <!-- 视频静音自动播放循环播放  -->
+                        <video src="videos/working-man.mp4" muted autoplay loop></video>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!-- 切换轮播图按钮 -->
+        <div class="glide__arrows" data-glide-el="controls">
+            <!-- 上一张 -->
+            <button class="glide__arrow glide__arrow--left" data-glide-dir="<">
+                <
+            </button>
+            <!-- 下一张 -->
+            <button class="glide__arrow glide__arrow--right" data-glide-dir=">">
+                >
+            </button>
+            <!-- 圆点 -->
+            <div class="glide__bullets" data-glide-el="controls[nav">
+                <button class="glide__bullet" data-glide-dir="=0"></button>
+                <button class="glide__bullet" data-glide-dir="=1"></button>
+            </div>
+
+        </div>
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>
