@@ -30,6 +30,59 @@ header{
     /* 栅格布局 */
     display:grid;
     padding:0 40px;
+    grid-template-columns: 1fr 2fr;
+    align-items: center;
+    position: relative;
+    z-index:200;
+}
 
-    gr
+.logo{
+
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--text-color-lightest);
+}
+
+.vader{
+    height: 50%;
+    width:50%;
+}
+
+.vader1{
+    display: inline;
+    position: absolute;
+    top:45px;
+    left: 160px
+}
+
+header nav{
+    justify-self: end;
+
+}
+
+header nav i{
+    color: var(--text-color-lightest);
+}
+
+header nav a{
+    color: var(--text-color-lightest);
+    text-decoration: none;
+    margin: 0 24px;
+}
+
+header .burger{
+    display: none;
+}
+
+.glide{
+    position: relative;
+    top:-80px;
+    z-index: 50;
+}
+
+.glide__slide img,
+.glide__slide video{
+    width:100vm;
+    height: 100vh;
+    object-fit:cover;
 }
