@@ -7,26 +7,24 @@
     <link rel="stylesheet" href="libs/glide/glide.core.min.css">
     <link rel="stylesheet" href="libs/glide/glide.theme.min.css">
     <link rel="stylesheet" href="style.css">
-    
+    <script src="libs/scrollReveal/scrollreveal.min.js"></script>
     <title>维达科技</title>
 </head>
 <body>
-    <header>
+    <header class="open">
         <div class="logo">
             <img src="images/darth-vader.png" class="vader">
-            <!-- <div class="vader1">维达科技</div> -->
-            
+            <!-- <div class="vader1">Vader</div>  -->
         </div>
 
         <nav>
-            <a href="#">首页</a>
-            <a href="#">解决方案</a>
-            <a href="#">成功案例</a>
-            <a href="#">资源与服务</a>
-            <a href="#">基础设施</a>
-            <a href="#">团队介绍</a>
-            <i class="fas fa-search"></i>
-
+            <a href="#home">首页</a>
+            <a href="#about-us">解决方案</a>
+            <a href="#showcases">成功案例</a>
+            <a href="#service">资源与服务</a>
+            <a href="#cmap">基础设施</a>
+            <a href="#team-intro">团队介绍</a>
+            <a href="#"><i class="fas fa-search"></i></a>
         </nav>
         <!-- 折叠导航按钮，屏幕缩小时使用 -->
         <div class="burger">
@@ -36,7 +34,7 @@
         </div>
     </header>
     <!-- 定义轮播图 -->
-    <div class="glide">
+    <div id="home" class="glide">
         <!-- 轮播图轨迹 -->
         <div class="glide__track" data-glide-el="track">
             <div class="glide__slides">
@@ -88,7 +86,7 @@
         </div>
     </div>
     <div class="content-wrapper">
-        <section class="about-us">
+        <section id="about-us" class="about-us">
             <h2 class="title1">解决方案</h2>
             <p class="intro">
                 维达科技(Vader)具有全面、落地的AI开放、安全的Big Data持续、先进的Cloud技术,支持192个业务场景的全栈解决方案。
@@ -127,7 +125,7 @@
                 
             </div>
         </section>
-        <section class="showcases section-bg">
+        <section id="showcases" class="showcases section-bg">
             <h2 class="title1">成功案例</h2>
             <div class="filter-btns">
                 <button class="filter-btn active" data-filter="*">全部</button>
@@ -162,7 +160,7 @@
                 </div>
             </div>
         </section>
-        <section class="service">
+        <section id="service" class="service">
             <h2 class="title1">资源与服务</h2>
             <p class="intro">
                 维达云与云市场众多优秀第三方服务供应商合作，<br>
@@ -206,7 +204,7 @@
                 </div>
             </div>
         </section>
-        <section class="map">
+        <section id="cmap" class="map">
             <h2 class="title1">维达云基础设施</h2>
             <p class="intro">
                 开放33个地理区域，拥有500多个加速节点，为更多企业提供强有力的技术支持，助力业务飞速拓展。
@@ -214,32 +212,32 @@
             <img src="images/cmap.png" class="cmap">
             
         </section>
-        <section class="data-section">
+        <section id="data-section" class="data-section">
             <div class="data-piece">
                 <i class="fas fa-user-secret"></i>
                 <div class="data-desc">抵御攻击</div>
-                <div class="num">477,300,288</div>   
+                <div class="num">477300288</div>   
             </div>
 
             <div class="data-piece">
                 <i class="fas fa-satellite"></i>
-                <div class="data-desc">技术能力</div>
-                <div class="num">288项</div>   
+                <div class="data-desc">技术专利</div>
+                <div class="num">288</div>   
             </div>
 
             <div class="data-piece">
-                <i class="fas fa-umbrella"></i>
-                <div class="data-desc">数据可靠性</div>
-                <div class="num">99.999995%</div>   
+                <i class="fas fa-server"></i>
+                <div class="data-desc">服务器数</div>
+                <div class="num">4237429</div>   
             </div>
             
             <div class="data-piece">
                 <i class="fas fa-user-tie"></i>
                 <div class="data-desc">开发者数</div>
-                <div class="num">150W+</div>   
+                <div class="num">1532145</div>   
             </div>
         </section>
-        <section class="team-intro section-bg">
+        <section id="team-intro" class="team-intro section-bg">
             <h2 class="title1">团队介绍</h2>
             <div class="team-members">
 
@@ -301,7 +299,6 @@
                 
             </div>
         </section>
-        
     </div>
     <footer>
         <div class="footer-menus">
@@ -353,7 +350,7 @@
                 ©Copyright 2020 维达科技  版权所有
             </p>
             <div class="scrollToTop">
-                <a href="#"><i class="fas fa-chevron-up"></i></a>
+                <a href="#home"><i class="fas fa-chevron-up"></i></a>
             </div>
         </div>
     </footer>
@@ -362,6 +359,7 @@
     <script src="libs/anime/anime.min.js"></script>
     <script src="libs/glide/glide.min.js"></script>
     <script src="libs/isotope/isotope.pkgd.min.js"></script>
+    <script src="libs/smooth-scroll/smooth-scroll.polyfills.min.js"></script>
     <script src="index.js"></script>
 </body>
 </html>
