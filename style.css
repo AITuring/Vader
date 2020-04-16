@@ -1,5 +1,5 @@
 /* 样式重置 */
-.{
+*{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -507,72 +507,78 @@ section-bg{
     font-weight: 400;
 }
 
-footer{
+footer {
     margin-top: 124px;
     background-color: #181818;
-    display:grid;
+    display: grid;
     justify-items: center;
     padding-top: 72px;
     padding-bottom: 24px;
-
-}
-
-.footer-menus{
+  }
+  
+  /* 底部菜单 */
+  .footer-menus {
     width: 100%;
     max-width: 1180px;
-    display:grid;
-    grid-template-columns: 2fr repeat(4,1fr);
-    padding:0 80px;
+    display: grid;
+    /* 5列布局 */
+    grid-template-columns: 2fr repeat(4, 1fr);
+    padding: 0 80px;
     position: relative;
-}
-
-.menu-title{
+  }
+  
+  /* 导航菜单，靠右对齐 */
+  .footer-menu {
+    justify-self: end;
+  }
+  
+  /* 一级菜单 */
+  .menu-title {
     font-size: 20px;
-    color:white;
+    color: white;
     font-weight: 600;
     margin-bottom: 20px;
-    
-}
-
-.contact-us{
+  }
+  
+  /* 联系我们，靠左对齐 */
+  .contact-us {
     justify-self: start;
     color: var(--text-color-lightest);
-    font-size: 16px;
-}
-
-.contact-us p:not(:first-child){
-    padding-bottom:10px ;
-
-}
-
-.menu-items{
-    text-align: left;
-    padding: 0;
-}
-.menu-items li{
+  }
+  
+  /* 联系我们，文字 */
+  .contact-us p:not(:first-child) {
+    padding-bottom: 16px;
+  }
+  
+  /* 菜单项 */
+  .menu-items li {
     list-style: none;
     padding-bottom: 8px;
-}
-
-.menu-items li a{
+  }
+  /* 菜单链接 */
+  .menu-items li a {
     text-decoration: none;
     font-weight: 300;
     color: var(--text-color-lightest);
-}
-
-.icp-info{
+  }
+  
+  /* 备案信息 */
+  .icp-info {
     margin-top: 24px;
-    margin-bottom: 10px;
-}
-
-.icp-info, 
-.rights{
-    grid-column: 1/-1;
-    justify-content: center;
-    text-align: center;
-    color:white;
-    font-size: 12px;
-}
+    margin-bottom: 16px;
+  }
+  
+  /* 备案信息，版权信息 */
+  .icp-info,
+  .rights {
+    /* 占满整行，-1代表最后一个编号 */
+    grid-column: 1 / -1;
+    /* 居中对齐 */
+    justify-self: center;
+    color: white;
+    font-size: 14px;
+  }
 
 .scrollToTop{
     display: none;
@@ -593,80 +599,282 @@ footer{
     z-index: 300;
 }
 
-@media (max-width:1100px){
-    header nav{
-        display: none;
+/* 自适应，小于1100象素时 */
+@media (max-width: 1100px) {
+    /* 导航设置为不可见，点击折叠按钮显示全屏导航 */
+    header nav {
+      display: none;
     }
-}
-
-header{
-    grid-template-columns: repeat(2,1fr);
-}
-
-header .burger{
-    display:block;
-    width: 20px;
-    height: 6px;
-    position: relative;
-    justify-self: end;
-}
-
-.burger-line1, 
-.burger-line2, 
-.burger-line3{
-    width:20px;
-    height: 2px;
-    background-color: var(--text-color-lightest);
-}
-
-.burger-line1{
-    position: absolute;
-    top: -6px;
-}
-
-.burger-line3{
-    position: absolute;
-    top:6px;
-}
-
-header.open nav {
-    display:grid;
-    position:absolute;
-    left: 0;
-    top: 0;
-    width:100vw;
-    height: 100vh;
-    background-color: white;
-    grid-auto-rows:max-content;
-    justify-items: end;
-    padding:0 40px;
-
-}
-
-header.open nav > *{
-    color: var(--text-color-darker);
-}
-
-header.open .burger-line1,
-header.open .burger-line2,
-header.open .burger-line3{
-    background-color: var(--text-color-darker);
-    transition: 0.4s ease;
-}
-header.open .burger-line1{
-    transform:rotate(45deg) translate(3px,5px);
-}
-header.open .burger-line2{
-    transform:translateX(5px);
-    opacity: 0;
-}
-
-header.open .burger-line3{
-    transform:rotate(-45deg) translate(3px,-5px);
-
-}
-
-header.open .logo{
-    z-index: 40;
-}
-
+  
+    /* 头部平分两列布局 */
+    header {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  
+    /* 折叠菜单样式，显示出来 */
+    header .burger {
+      display: block;
+      justify-self: center;
+      cursor: pointer;
+      position: relative;
+      width: 20px;
+      height: 6px;
+    }
+  
+    /* 折叠按钮线条样式 */
+    .burger-line1,
+    .burger-line2,
+    .burger-line3 {
+      width: 20px;
+      height: 2px;
+      background-color: var(--text-color-lightest);
+      /* position: relative; */
+    }
+  
+    /* 上移第一条线 */
+    .burger-line1 {
+      position: absolute;
+      top: -6px;
+    }
+    /* 下移第三条线 */
+    .burger-line3 {
+      position: absolute;
+      top: 6px;
+    }
+  
+    /* 全屏导航展开时，折叠按钮设置为深色 */
+    header.open .burger-line1,
+    header.open .burger-line2,
+    header.open .burger-line3,
+    header.sticky .burger-line1,
+    header.sticky .burger-line2,
+    header.sticky .burger-line3 {
+      background-color: var(--text-color-darker);
+      transition: 0.4s ease;
+    }
+  
+    /* 全屏导航显示时，折叠按钮第一条线样式 */
+    header.open .burger-line1 {
+      transform: rotate(45deg) translate(3px, 5px);
+    }
+  
+    /* 全屏导航显示时，折叠按钮第二条线样式 */
+    header.open .burger-line2 {
+      transform: translateX(5px);
+      opacity: 0;
+    }
+  
+    /* 全屏导航显示时，折叠按钮第三条线样式 */
+    header.open .burger-line3 {
+      transform: rotate(-45deg) translate(3px, -5px);
+    }
+    /* 全屏导航显示时，logo样式 */
+    header.open .logo {
+      color: var(--text-color-darker);
+      z-index: 40;
+    }
+  
+    /* 全屏导航显示时，导航菜单样式 */
+    header.open nav {
+      display: grid;
+      /* 每行高度为内容的高度，不设置会平分全屏高度 */
+      grid-auto-rows: max-content;
+      /* 菜单项靠右对齐 */
+      justify-self: end;
+      justify-items: end;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background: white;
+      width: 100vw;
+      height: 100vh;
+      padding: 0 40px;
+      opacity: 0;
+      /* 下滑效果 */
+      animation: slideDown 0.6s ease-out forwards;
+    }
+    /* 全屏导航显示时，导航菜单项样式和动画 */
+    header.open nav > * {
+      margin: 4px 0;
+      font-size: 18px;
+      color: var(--text-color-darker);
+      opacity: 0;
+      animation: showMenu 0.5s linear forwards 0.4s;
+    }
+  
+    /* 搜索按钮 */
+    header.open nav > i.fas {
+      margin-top: 10px;
+      color: var(--text-color-darker)
+    }
+  
+    /* 导航下滑动画 */
+    @keyframes slideDown {
+      from {
+        height: 0;
+        opacity: 0;
+      }
+      to {
+        height: 100vh;
+        padding-top: 80px;
+        opacity: 1;
+      }
+    }
+  
+    /* 菜单项动画 */
+    @keyframes showMenu {
+      from {
+        opacity: 0;
+        transform: translateY(-1vh);
+      }
+      to {
+        opacity: 1;
+      }
+    }
+    /* 缩小业务流程标题字体 */
+    .service-item .service-title {
+      font-size: 20px;
+    }
+    /* 缩小业务流程内容字体和行距 */
+    .service-item .service-content {
+      font-size: 14px;
+      line-height: 24px;
+    }
+  
+    /* 团队成员改为两列 */
+    .team-members {
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: 6vw;
+      row-gap: 36px;
+    }
+    /* 公司动态改为两列 */
+    .activities {
+      grid-template-columns: repeat(2, 1fr);
+      row-gap: 36px;
+    }
+  }
+  
+  /* 小于992象素时 */
+  @media (max-width: 992px) {
+    /* 轮播标题字号缩小  */
+    .slide-caption h1 {
+      font-size: 48px;
+    }
+  
+    .slide-caption h3 {
+      font-size: 18px;
+    }
+  
+    /* 关于我们和业务流程设置为两列布局 */
+    .features,
+    .services {
+      grid-template-columns: repeat(2, 1fr);
+      /* 取消两行布局 */
+      grid-template-rows: unset;
+    }
+    /* 数据部分设置为两列布局 */
+    .data-section {
+      /* 每列最小宽度为200象素，最大为自动 */
+      grid-template-columns: repeat(2, minmax(200px, auto));
+      row-gap: 24px;
+      height: auto;
+      padding: 24px 0;
+      background-size: 200%;
+    }
+    /* 成功案例图片设置为3列 */
+    .showcases .case-item {
+      width: calc(100vw / 3);
+    }
+  }
+  
+  /* 小于768象素时 */
+  @media (max-width: 768px) {
+    /* 区域的左右内边距设置为40象素 */
+    section,
+    .footer-menus {
+      padding: 0 40px;
+    }
+  
+    /* 关于我们和业务流程设置为1列 */
+    .features,
+    .services {
+      grid-template-columns: 1fr;
+    }
+  
+    /* 团队成员设置为1列 */
+    .team-members {
+      grid-template-columns: minmax(200px, 400px);
+      /* column-gap: 6vw;
+      row-gap: 36px; */
+    }
+  
+    /* 数据部分设置为1列 */
+    .data-section {
+      grid-template-columns: 1fr;
+      /* 增加背景尺寸 */
+      background-size: 320%;
+    }
+    /* 公司动态设置为1列 */
+    .activities {
+      grid-template-columns: 1fr;
+      row-gap: 36px;
+    }
+  
+    /* 成功案例图片显示为两列 */
+    .showcases .case-item {
+      width: calc(100vw / 2);
+      height: 30vw;
+    }
+  
+    /* 底部菜单设置为3列 */
+    .footer-menus {
+      grid-template-columns: 2fr repeat(2, 1fr);
+      row-gap: 24px;
+    }
+  
+    /* 联系我们占前两列 */
+    .contact-us {
+      grid-row: 1 / 3;
+    }
+  
+    /* 菜单文字靠右对齐 */
+    .footer-menu {
+      text-align: right;
+    }
+  }
+  
+  /* 小于576象素 */
+  @media (max-width: 576px) {
+    /* 缩小轮播标题文字，探索更多按钮文字 */
+    .slide-caption h1 {
+      font-size: 28px;
+    }
+  
+    .slide-caption h3 {
+      font-size: 14px;
+    }
+  
+    .explore-btn {
+      padding: 8px 18px;
+      font-size: 14px;
+    }
+  
+    /* 成功案例显示为1列 */
+    .showcases .case-item {
+      width: 100vw;
+      height: 60vw;
+    }
+  
+    /* 底部菜单显示为1列 */
+    .footer-menus {
+      grid-template-columns: 1fr;
+      /* row-gap: 24px; */
+    }
+  
+    /* 底部菜单左对齐 */
+    .footer-menu {
+      justify-self: start;
+      text-align: left;
+    }
+  }
+  
